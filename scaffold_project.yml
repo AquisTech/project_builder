@@ -1,11 +1,11 @@
-entities: 
-  - 
+entities:
+  -
     model: Account
     _table: accounts
     _controller: AccountsController
     attributes:
       -
-        name: 
+        name:
           type: string
           db_constraints:
             null: false
@@ -27,7 +27,7 @@ entities:
             unique: true # [attr1, attr2]
           validations:
             presence: true
-            unique: true # scope: [attr1, attr2]    
+            unique: true # scope: [attr1, attr2]
           html:
             input_type: select
             mandatory: true
@@ -41,7 +41,7 @@ entities:
             default: 0
           validations:
             presence: true
-            numeric: true # scope: [attr1, attr2]    
+            numeric: true # scope: [attr1, attr2]
           html:
             input_type: number
             mandatory: true
