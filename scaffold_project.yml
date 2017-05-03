@@ -1,3 +1,13 @@
+project:
+  name: ExpenseTracker
+  code: ExT
+  database: mysql2
+  ruby: 2.3.0
+  rails: 5.2.0
+gems:
+
+initializers:
+
 entities:
   -
     model: Account
