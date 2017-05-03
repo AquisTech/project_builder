@@ -1,0 +1,50 @@
+entities: 
+  - 
+    model: Account
+    _table: accounts
+    _controller: AccountsController
+    attributes:
+      -
+        name: 
+          type: string
+          db_constraints:
+            null: false
+            index: true
+            unique: true # [attr1, attr2]
+          validations:
+            presence: true
+            unique: true # scope: [attr1, attr2]
+        description:
+          type: text
+          html:
+            input_type: text_area
+            placeholder: 'Please enter account description'
+        account_type_id:
+          type: integer
+          db_constraints:
+            null: false
+            index: true
+            unique: true # [attr1, attr2]
+          validations:
+            presence: true
+            unique: true # scope: [attr1, attr2]    
+          html:
+            input_type: select
+            mandatory: true
+            input_data: AccountType.all # this is default
+            placeholder: 'Select Account Type' # This works as promt for select list
+            hint: 'This is must'
+        amount:
+          type: integer
+          db_constraints:
+            null: false
+            default: 0
+          validations:
+            presence: true
+            numeric: true # scope: [attr1, attr2]    
+          html:
+            input_type: number
+            mandatory: true
+            default_data: 0
+            placeholder: 'Enter amount' # This works as promt for select list
+            hint: 'Enter amount without any commas'
